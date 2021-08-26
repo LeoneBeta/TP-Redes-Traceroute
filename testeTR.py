@@ -1,14 +1,23 @@
 # coding: utf-8
 
-from scapy.all import *
-hostname = "8.8.8.8"
-for i in range(1, 28):
-    pkt = IP(dst=hostname, ttl=i) / UDP(dport=33434)
-    reply = sr1(pkt, verbose=0)
-    if reply is None:
-        break
-    elif reply.type == 3:
-        print("Done!", reply.src)
-        break
-    else:
-        print("%d hops away: " % i, reply.src)
+import IP2Location, os
+from requests import get
+
+
+apiLink = 'https://api.ipinfodb.com/v3/ip-city?key=f5ad2b83006363b9227f48569c02468389c49dd65363884ef06598945e9d187d&ip='
+
+ip = input("Forneça o IP: ")
+
+finalLink = apiLink + ip
+
+response = get(finalLink).text
+print(format(response))
+
+##database = IP2Location.IP2Location(os.path.join("data", "./IP2LOCATION-LITE-DB1.BIN"))
+##rec = database.get_all("8.8.8.8")
+
+##print(rec.country_short)
+####print(rec.country_long)
+##print(rec.region)
+##print(rec.city)
+##print(rec.latitude)
