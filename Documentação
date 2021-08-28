@@ -1,0 +1,51 @@
+Este projeto utiliza de algumas bibliotecas python e APIs externas para seu funcionamento, abaixo há algumas
+instruções para a instalação dessas bibliotecas.
+
+<~~~~ ## BIBLIOTECAS UTILIZADAS ## ~~~~>
+
+Biblioteca Scapy
+    $ git clone https://github.com/secdev/scapy.git
+    $ cd scapy
+    $ sudo python3 setup.py install
+
+    Caso ja tenha essa biblioteca instalada, utilize os comandos abaixo para atualizar caso necessário
+        $ git pull
+        $ sudo python setup.py install
+
+<~~~~~~~~~~~ ## ## ## ~~~~~~~~~~~>
+
+Biblioteca Matplotlib
+    $ python3 -m pip install -U pip
+    $ python3 -m pip install -U matplotlib
+
+<~~~~~~~~~~~ ## ## ## ~~~~~~~~~~~>
+
+Biblioteca Numpy
+    $ sudo pip install numpy
+
+<~~~~ ## BIBLIOTECAS ANALIZADAS ## ~~~~>     
+
+Biblioteca Cython (Necessária para instalação da biblioteca Cartopy)
+    $ pip install Cython
+
+<~~~~~~~~~~~ ## ## ## ~~~~~~~~~~~> 
+
+Biblioteca Cartopy 
+    Caso tenha o conda já instalado
+        $ conda install -c conda-forge cartopy
+
+    Construindo direto do git
+        $ git clone https://github.com/SciTools/cartopy.git
+        $ cd cartopy
+        $ sudo python3 setup.py install
+        
+
+<~~~~~~ ## APIs UTILIZADAS ## ~~~~~~>
+
+API geolocalização por IP
+
+IPInfoDB -> https://www.ipinfodb.com/
+
+<~~~~ ## APIs ANALIZADAS ## ~~~~>
+
+GeoIP2 -> https://github.com/maxmind/GeoIP2-python
