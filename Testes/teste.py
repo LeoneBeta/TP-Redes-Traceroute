@@ -27,7 +27,6 @@ for i in range(1, 50):
     
     ##dividir a string e armazenar os dados na lista location
     location = stringLocation.split(';')
-
     ##armazena a lista location em uma lista, deixando todos os dados de localidade armazenados
     listLocation.append(location)
 
@@ -46,15 +45,3 @@ for k in listLocation:
         print ("{:<10} {:^10} {:>15} {:>20}".format(k[2],k[3],k[5],k[6]))
         ##print("#",k[2],"\t",k[3],"\t",k[5],"\t",k[6],"#")
         print("---------------------------------------------------------------------")
-
-
-
-
-##if stringBase == k[3]:
-##        ok = False
-##        break
-##    ok = True
-##    if ok:
-##utilizar os dados de localização numa API gráfica como, matplotlib e cartopy para gerar o mapa
-
-

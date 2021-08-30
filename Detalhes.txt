@@ -1,0 +1,81 @@
+    Com a utilização da biblioteca scapy, que faz a construção do cabeçalho do pacote, o projeto deve ser 
+executado em modo root, no linux podemos colocar o comando sud ao inicio da linha de comando.
+    
+    $ sudo python3 GeoIPLoc.py
+
+    Este projeto contém algumas bibliotecas python em sua estrutura e APIs externas para seu funcionamento,
+abaixo há algumas instruções para a instalação dessas bibliotecas. Também contém links para as APIs.
+    A API de geolocalização consta com alguns requisitos para seu funcionamento, incluindo eles:
+        
+        A chave ID de cadastro -> f5ad2b83006363b9227f48569c02468389c49dd65363884ef06598945e9d187d
+        O IP de origem deve ser o mesmo cadastrado -> Esse IP de origem foi cadastrado como o IP externo
+    da VPN criada pelo Docente. 
+
+    IPs para teste:
+        www.google.com -> 8.8.8.8
+        www.youtube.com -> 142.251.128.14
+        www.instagram.com -> 157.240.222.174
+        www.globo.com -> 186.192.81.5
+        
+<~~~~ ## BIBLIOTECAS UTILIZADAS ## ~~~~>
+    Biblitoeca para a criação de pacotes de rede para traceroute
+
+Biblioteca Scapy
+    $ pip install scapy
+
+        ou
+
+    $ git clone https://github.com/secdev/scapy.git
+    $ cd scapy
+    $ sudo python3 setup.py install
+
+    Caso ja tenha essa biblioteca instalada, utilize os comandos abaixo para atualizar caso necessário
+        $ git pull
+        $ sudo python setup.py install
+
+<~~~~ ## BIBLIOTECAS ANALIZADAS N/UTILIZADAS ## ~~~~> 
+    Biblioteca gráfica necessária para Biblioteca Cartopy
+
+Biblioteca Matplotlib
+    $ pip install matplotlib (Junto com ela, é instalado todas a bibliotecas requeridas)
+
+        ou
+
+    $ python3 -m pip install -U pip
+    $ python3 -m pip install -U matplotlib
+
+<~~~~~~~~~~~ ## ## ## ~~~~~~~~~~~> 
+    Biblioteca gráfica de criação de mapas globais
+Biblioteca Cartopy 
+    Caso tenha o conda já instalado
+        $ pip install cartopy
+
+            ou
+
+        $ conda install -c conda-forge cartopy
+
+    Construindo direto do git
+        $ git clone https://github.com/SciTools/cartopy.git
+        $ cd cartopy
+        $ sudo python3 setup.py install
+        
+<~~~~~~~~~~~ ## ## ## ~~~~~~~~~~~>
+    Bibliotecas necessárias para Cartopy
+Biblioteca GEOs
+    $ pip install GEOS
+Biblioteca Shapely 
+    $ pip install Shapely
+Biblioteca pyshp 
+    $ pip install pyshp
+
+    
+<~~~~~~ ## APIs UTILIZADAS ## ~~~~~~>
+    API geolocalização por IP, utilizada para fazer as requisições de localização do sistema
+
+IPInfoDB -> https://www.ipinfodb.com/
+
+<~~~~ ## APIs ANALIZADAS N/UTILIZADAS ## ~~~~>
+    Tem a mesma função da API anteriormente citada. Não foi utilizada por motivos financeiros e problemas
+técnicos a respeito da instalação da mesma.
+
+GeoIP2 -> https://github.com/maxmind/GeoIP2-python
