@@ -14,11 +14,15 @@ def main():
     ax.stock_img()
     ax.coastlines()
 
-    ax.plot(-0.08, 51.53, 'o', transform=ccrs.PlateCarree())
+    ax.plot(-48, -19, 'o', transform=ccrs.PlateCarree())
+    ax.plot(-52, -1, 'o', transform=ccrs.PlateCarree())
+    ax.plot(-43, -22, 'o', transform=ccrs.PlateCarree())
+    ax.plot(-46, -23, 'o', transform=ccrs.PlateCarree())
+    ax.plot(-122, 37, 'o', transform=ccrs.PlateCarree())
+    ax.plot([-48,-52],[-19,-1], transform=ccrs.PlateCarree())
     ax.plot([-52,-43],[-1,-22], transform=ccrs.PlateCarree())
     ax.plot([-43,-46],[-22,-23], transform=ccrs.PlateCarree())
     ax.plot([-46,-122],[-23,37], transform=ccrs.PlateCarree())
-
     '''
     [segundo_valorx,segundo_valory],[primeiro_valorx,primeiro_valory]  
     '''
