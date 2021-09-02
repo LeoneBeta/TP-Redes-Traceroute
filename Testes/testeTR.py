@@ -7,6 +7,7 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import matplotlib.ticker as mticker
 import numpy as np
+from testMap import generateMap
 
 
 ##Armazenando o link de requisição da API de localização, ja inserido a clientID de cadastro
