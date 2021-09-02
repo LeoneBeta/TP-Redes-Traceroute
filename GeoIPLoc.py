@@ -11,7 +11,7 @@ apiLink = 'https://api.ipinfodb.com/v3/ip-city?key=f5ad2b83006363b9227f48569c024
 
 hostName = input("Forneça o IP/url: ")
 
-##listLocation = [[]for j in range(50)] ##uma lista de listas para armazenar os dados
+##Listas utilizadas para armazenar os dados de localização
 listLocation = []
 location = []
 
@@ -42,34 +42,18 @@ print("Traceroute Concluído\n\n")
 print("Iniciando geração de mapa\n")
 print("...\n")
 
-'''
-##Gerando o Mapa
-fig = plt.figure(figsize=(20,15))
 
-ax = fig.add_subplot(111, projection=ccrs.Robinson())
-
-ax.add_feature(cfeature.LAND)
-ax.add_feature(cfeature.OCEAN)
-ax.add_feature(cfeature.COASTLINE)
-ax.add_feature(cfeature.BORDERS)
-ax.add_feature(cfeature.LAKES)
-ax.add_feature(cfeature.RIVERS)
-
-ax.stock_img()
-
-ax.gridlines(ccrs.Robinson)
-ax.set_title('GeoIPLoc',fontsize=20,y=1.02)
-'''
-
+##Gera o mapa global, passando tamanho, estilo, e algumas configurações extras
 fig = plt.figure(figsize=(20, 15))
 ax = fig.add_subplot(1, 1, 1, projection=ccrs.Robinson())
 
-# make the map global rather than have it zoom in to
-# the extents of any plotted data
+
 ax.set_global()
 
+##Plota o fundo estilizado, e marcações de divisa de países
 ax.stock_img()
 ax.coastlines()
+
 ax.set_title('GeoIPLoc',fontsize=20,y=1.02)
 
 print("\x1b[2J")
@@ -83,7 +67,7 @@ while jumps != 0:
         check += 1
     jumps -= 1
 
-##Convertendo a stringo para float, em seguida de float para int para ser utilizada na função de traçagem de rota
+##Convertendo a string para float, em seguida de float para int para ser utilizada na função de traçagem de rota
 convert=0
 while convert != check:
     listLocation[convert][8] = float(listLocation[convert][8]) 
@@ -94,6 +78,7 @@ while convert != check:
 
     convert += 1
 
+##Plota a primeira coordenada marcada
 ax.plot([-48,listLocation[0][9]],[-19,listLocation[0][8]],color='red',transform=ccrs.PlateCarree())
 print("\x1b[2J")
 print("...")
@@ -101,7 +86,7 @@ print("...")
 exit = 1
 while exit != check:
     ##[segundo_valorx,segundo_valory],[primeiro_valorx,primeiro_valory] 
-    print("Conexão",exit,": ",listLocation[exit-1][9],listLocation[exit-1][8],"|",listLocation[exit][9],listLocation[exit][8])
+    ##print("Conexão",exit,": ",listLocation[exit-1][9],listLocation[exit-1][8],"|",listLocation[exit][9],listLocation[exit][8])
     ax.plot([listLocation[exit-1][9],listLocation[exit][9]],[listLocation[exit-1][8],listLocation[exit][8]], color='red', transform=ccrs.PlateCarree())
     exit += 1
 

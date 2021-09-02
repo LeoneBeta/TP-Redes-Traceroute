@@ -32,10 +32,12 @@ A API de geolocalização consta com alguns requisitos para seu funcionamento, i
 
 <~~~~ ## IPs PARA TESTES ## ~~~~>
     IPs para teste:
-        www.google.com -> 8.8.8.8
-        www.youtube.com -> 142.251.128.14
-        www.instagram.com -> 157.240.222.174
-        www.globo.com -> 186.192.81.5
+        www.google.com      -> 8.8.8.8
+        cpentalk.com        -> 104.21.11.36
+        www.youtube.com     -> 142.251.128.14
+        github.com          -> 20.201.28.151
+        stackoverflow.com   -> 151.101.129.69
+        
         
 
 <~~~~~~~ ## CRIANDO AMBIENTE PYTHON ## ~~~~~~~>
